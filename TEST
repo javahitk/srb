@@ -2107,3 +2107,22 @@ int main() {
     printf("Both threads finished execution.\n");
     return 0;
 }
+-----------------------------------------
+ADDITINAL QUESTIONS:-
+63.Write a shell script to Find 3 largest file in  Current directory and  Print their size sum:-
+#!/bin/bash
+
+# Get sizes of 3 largest files (in bytes)
+sizes=$(ls -lS | awk 'NR>1 && !/^d/ {print $5}' | head -3)
+
+sum=0
+
+# Add the sizes
+for s in $sizes
+do
+  sum=$((sum + s))
+done
+
+echo "Sum of sizes of the 3 largest files: $sum bytes"
+
+64.
